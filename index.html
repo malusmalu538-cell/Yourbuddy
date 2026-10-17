@@ -10,48 +10,56 @@
     body { background: #0f172a; color: #f8fafc; display: flex; height: 100vh; overflow: hidden; }
     
     /* Left Panel: Main App */
-    .main-panel { flex: 1; display: flex; flex-direction: column; padding: 20px; gap: 15px; }
-    .header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 15px 20px; border-radius: 12px; }
-    .header h2 { color: #38bdf8; font-size: 20px; }
+    .main-panel { flex: 1; display: flex; flex-direction: column; padding: 15px; gap: 12px; overflow-y: auto; }
+    .header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 12px 15px; border-radius: 12px; }
+    .header h2 { color: #38bdf8; font-size: 18px; }
     
     /* Settings / Inputs */
-    .config-bar { display: flex; gap: 10px; background: #1e293b; padding: 12px; border-radius: 12px; flex-wrap: wrap; }
-    .config-bar input { background: #0f172a; border: 1px solid #334155; color: white; padding: 8px 12px; border-radius: 6px; flex: 1; }
+    .config-bar { display: flex; gap: 8px; background: #1e293b; padding: 10px; border-radius: 12px; flex-wrap: wrap; }
+    .config-bar input { background: #0f172a; border: 1px solid #334155; color: white; padding: 8px; border-radius: 6px; flex: 1; font-size: 14px; min-width: 120px; }
     
     /* Video Area */
-    .stage { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; background: #020617; padding: 15px; border-radius: 12px; position: relative; }
-    .video-box { background: #1e293b; border-radius: 10px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid #334155; }
-    .video-box .label { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; font-size: 12px; z-index: 10; }
-    .avatar { font-size: 48px; display: none; }
+    .stage { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: #020617; padding: 10px; border-radius: 12px; min-height: 250px; }
+    .video-box { background: #1e293b; border-radius: 10px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid #334155; min-height: 180px; }
+    .video-box .label { position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.7); padding: 3px 6px; border-radius: 4px; font-size: 11px; z-index: 10; }
+    .avatar { font-size: 36px; display: none; }
     .audio-only .avatar { display: block; }
     
     /* Controls Bar */
-    .controls { display: flex; justify-content: center; gap: 15px; background: #1e293b; padding: 15px; border-radius: 12px; }
-    button { background: #0284c7; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .controls { display: flex; justify-content: center; gap: 10px; background: #1e293b; padding: 12px; border-radius: 12px; flex-wrap: wrap; }
+    button { background: #0284c7; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
     button:hover { background: #0369a1; }
     button.danger { background: #e11d48; }
-    button.danger:hover { background: #be123c; }
     button.success { background: #16a34a; }
-    button.success:hover { background: #15803d; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
     
     /* Right Panel: Chat & Monetization */
-    .side-panel { width: 340px; background: #1e293b; border-left: 1px solid #334155; display: flex; flex-direction: column; }
-    .side-header { padding: 15px; border-bottom: 1px solid #334155; font-weight: bold; color: #38bdf8; text-align: center; }
+    .side-panel { width: 320px; background: #1e293b; border-left: 1px solid #334155; display: flex; flex-direction: column; }
+    .side-header { padding: 12px; border-bottom: 1px solid #334155; font-weight: bold; color: #38bdf8; text-align: center; font-size: 15px; }
     
     /* Price Banner */
-    .pricing-card { background: #0f172a; margin: 15px; padding: 15px; border-radius: 10px; border: 1px solid #38bdf8; text-align: center; }
-    .pricing-card h3 { color: #4ade80; font-size: 22px; margin-top: 5px; }
+    .pricing-card { background: #0f172a; margin: 12px; padding: 12px; border-radius: 10px; border: 1px solid #38bdf8; text-align: center; }
+    .pricing-card h3 { color: #4ade80; font-size: 20px; margin-top: 4px; }
     
     /* Chat Area */
-    .chat-box { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
-    .message { background: #334155; padding: 8px 12px; border-radius: 8px; font-size: 14px; max-width: 85%; }
+    .chat-box { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; max-height: 200px; }
+    .message { background: #334155; padding: 8px 10px; border-radius: 8px; font-size: 13px; max-width: 85%; }
     .message.me { background: #0284c7; align-self: flex-end; }
-    .chat-input { display: flex; padding: 10px; gap: 8px; border-top: 1px solid #334155; background: #0f172a; }
-    .chat-input input { flex: 1; background: #1e293b; border: 1px solid #334155; color: white; padding: 8px; border-radius: 6px; }
+    .chat-input { display: flex; padding: 8px; gap: 6px; border-top: 1px solid #334155; background: #0f172a; }
+    .chat-input input { flex: 1; background: #1e293b; border: 1px solid #334155; color: white; padding: 8px; border-radius: 6px; font-size: 13px; }
 
     /* Modal / UPI Pay Screen */
-    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; z-index: 100; }
-    .modal-content { background: #1e293b; padding: 25px; border-radius: 12px; max-width: 360px; width: 100%; text-align: center; border: 1px solid #38bdf8; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+    .modal-content { background: #1e293b; padding: 20px; border-radius: 12px; max-width: 320px; width: 100%; text-align: center; border: 1px solid #38bdf8; }
+
+    /* MOBILE RESPONSIVE DESIGN (For Phones) */
+    @media (max-width: 768px) {
+      body { flex-direction: column; height: 100vh; overflow-y: auto; }
+      .side-panel { width: 100%; border-left: none; border-top: 1px solid #334155; height: auto; }
+      .stage { grid-template-columns: 1fr; min-height: 200px; }
+      .video-box { min-height: 140px; }
+      .chat-box { max-height: 150px; }
+    }
   </style>
 </head>
 <body>
@@ -59,16 +67,16 @@
   <!-- Left Main Area -->
   <div class="main-panel">
     <div class="header">
-      <h2>1-on-1 Consultation Portal</h2>
-      <div id="status-badge" style="color: #f8fafc; font-size: 14px;">Status: Idle</div>
+      <h2>1-on-1 Portal</h2>
+      <div id="status-badge" style="color: #38bdf8; font-size: 13px;">Status: Idle</div>
     </div>
 
     <!-- Agora Credentials setup -->
     <div class="config-bar">
-      <input type="text" id="app-id" placeholder="Paste e7143e7ccbd847088c70d05a7ca4090b">
-      <input type="text" id="channel-name" value="consultation-room" placeholder="Channel Name">
-      <input type="number" id="call-price" value="299" style="max-width: 110px;" placeholder="Price (₹)">
-      <button onclick="updateSettings()">Set Price</button>
+      <input type="text" id="app-id" placeholder="Paste Agora App ID">
+      <input type="text" id="channel-name" value="room-1" placeholder="Channel">
+      <input type="number" id="call-price" value="299" style="max-width: 80px;" placeholder="₹">
+      <button onclick="updateSettings()">Set</button>
     </div>
 
     <!-- Video Containers -->
@@ -85,10 +93,10 @@
 
     <!-- Control Buttons -->
     <div class="controls">
-      <button class="success" id="start-call-btn" onclick="openPaymentOrJoin('video')">📹 Video Call</button>
-      <button class="success" id="start-voice-btn" onclick="openPaymentOrJoin('audio')">🎙️ Voice Call</button>
-      <button class="danger" id="leave-btn" onclick="leaveCall()" disabled>🔴 End Call</button>
-      <button onclick="copyInviteLink()">🔗 Copy Link</button>
+      <button class="success" id="start-call-btn" onclick="openPaymentOrJoin('video')">📹 Video</button>
+      <button class="success" id="start-voice-btn" onclick="openPaymentOrJoin('audio')">🎙️ Voice</button>
+      <button class="danger" id="leave-btn" onclick="leaveCall()" disabled>🔴 End</button>
+      <button onclick="copyInviteLink()">🔗 Link</button>
     </div>
   </div>
 
@@ -97,19 +105,19 @@
     <div class="side-header">Live Chat & Payment</div>
     
     <div class="pricing-card">
-      <div style="font-size: 12px; color: #94a3b8;">Session Fee</div>
+      <div style="font-size: 11px; color: #94a3b8;">Session Fee</div>
       <h3 id="display-price">₹299</h3>
-      <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Pay via UPI / Card before joining</div>
+      <div style="font-size: 10px; color: #94a3b8; margin-top: 2px;">Pay via UPI / Card</div>
     </div>
 
     <!-- Chat Messages -->
     <div class="chat-box" id="chat-messages">
-      <div class="message">Welcome! Type your message below or start a voice/video call.</div>
+      <div class="message">Welcome! Type a message or start a call.</div>
     </div>
 
     <!-- Chat Input -->
     <div class="chat-input">
-      <input type="text" id="chat-msg-input" placeholder="Type a message...">
+      <input type="text" id="chat-msg-input" placeholder="Type message...">
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
@@ -118,15 +126,14 @@
   <div class="modal" id="pay-modal">
     <div class="modal-content">
       <h3>Unlock Session</h3>
-      <p style="margin: 10px 0; color: #94a3b8; font-size: 14px;">Scan UPI QR or click to pay session fee:</p>
-      <div style="font-size: 28px; color: #4ade80; font-weight: bold; margin: 15px 0;" id="modal-price">₹299</div>
+      <p style="margin: 8px 0; color: #94a3b8; font-size: 13px;">Complete payment to join:</p>
+      <div style="font-size: 24px; color: #4ade80; font-weight: bold; margin: 10px 0;" id="modal-price">₹299</div>
       
-      <!-- Placeholder UPI Option -->
-      <div style="background: #0f172a; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 13px;">
-        💳 UPI / GPay / PhonePe Accepted
+      <div style="background: #0f172a; padding: 8px; border-radius: 6px; margin-bottom: 12px; font-size: 12px;">
+        💳 UPI / GPay / PhonePe / Card
       </div>
 
-      <button class="success" style="width: 100%; margin-bottom: 8px;" onclick="completePayment()">Simulate Paid Entry</button>
+      <button class="success" style="width: 100%; margin-bottom: 6px;" onclick="completePayment()">Simulate Paid Entry</button>
       <button class="danger" style="width: 100%;" onclick="closeModal()">Cancel</button>
     </div>
   </div>
@@ -134,7 +141,6 @@
   <script>
     let client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
     let localAudioTrack, localVideoTrack;
-    let isAudioOnly = false;
     let isPaid = false;
     let pendingCallType = 'video';
 
@@ -166,30 +172,25 @@
     }
 
     async function startCall(type) {
-      const appId = document.getElementById('app-id').value;
-      const channel = document.getElementById('channel-name').value;
+      const appId = document.getElementById('app-id').value.trim();
+      const channel = document.getElementById('channel-name').value.trim();
 
       if (!appId) {
         alert("Please paste your Agora App ID at the top first!");
         return;
       }
 
-      document.getElementById('status-badge').innerText = "Status: Connecting...";
+      document.getElementById('status-badge').innerText = "Connecting...";
 
-      // Join Channel
       await client.join(appId, channel, null, null);
-
-      // Create Microphone Track
       localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
 
       if (type === 'video') {
-        isAudioOnly = false;
         localVideoTrack = await AgoraRTC.createCameraVideoTrack();
         localVideoTrack.play("local-player");
         await client.publish([localAudioTrack, localVideoTrack]);
         document.getElementById('local-avatar').style.display = 'none';
       } else {
-        isAudioOnly = true;
         await client.publish([localAudioTrack]);
         document.getElementById('local-avatar').style.display = 'block';
       }
@@ -197,9 +198,8 @@
       document.getElementById('start-call-btn').disabled = true;
       document.getElementById('start-voice-btn').disabled = true;
       document.getElementById('leave-btn').disabled = false;
-      document.getElementById('status-badge').innerText = "Status: Connected (" + type.toUpperCase() + ")";
+      document.getElementById('status-badge').innerText = "Connected (" + type.toUpperCase() + ")";
 
-      // Subscribe to customer video/audio
       client.on("user-published", async (user, mediaType) => {
         await client.subscribe(user, mediaType);
         if (mediaType === "video") {
@@ -215,13 +215,12 @@
     async function leaveCall() {
       if (localAudioTrack) localAudioTrack.close();
       if (localVideoTrack) localVideoTrack.close();
-
       await client.leave();
 
       document.getElementById('start-call-btn').disabled = false;
       document.getElementById('start-voice-btn').disabled = false;
       document.getElementById('leave-btn').disabled = true;
-      document.getElementById('status-badge').innerText = "Status: Call Ended";
+      document.getElementById('status-badge').innerText = "Ended";
     }
 
     function sendMessage() {
@@ -242,7 +241,7 @@
       const channel = document.getElementById('channel-name').value;
       const url = window.location.origin + window.location.pathname + '?channel=' + channel;
       navigator.clipboard.writeText(url);
-      alert("Invite link copied to clipboard!\nShare this link with your customer.");
+      alert("Invite link copied!");
     }
   </script>
 </body>
